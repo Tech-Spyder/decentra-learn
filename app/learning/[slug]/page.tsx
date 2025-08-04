@@ -1,6 +1,5 @@
 "use client";
 
-import { CourseStepCarousel } from "@/modules/app/carousel";
 import { StepsSlider } from "@/modules/app/slider";
 import { useCourse } from "@/modules/hooks/useSingleCourse";
 import { usePrivy } from "@privy-io/react-auth";
