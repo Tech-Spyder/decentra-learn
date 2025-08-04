@@ -1,16 +1,18 @@
 @import "tailwindcss";
 /* globals.css */
-@import "slick-carousel/slick/slick.css";
-@import "slick-carousel/slick/slick-theme.css";
+/* @import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css"; */
+@import "keen-slider/keen-slider.min.css";
+
 
 
 /* Optional: tweak slick defaults to match your design */
 .slick-slider {
-  width: 100%;
+  width: 100% !important;
 }
 .slick-list {
   border-radius: 1rem; /* matches rounded-2xl container */
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .slick-dots li button:before {
@@ -38,6 +40,12 @@
   --color-dark-accent: hsl(237, 50%, 22%);
   --color-tertiary: hsl(0, 0%, 12%);
   --color-muted-foreground: hsl(0, 0%, 24%);
+  --color-new-tertiary: hsl(0, 0%, 13%);
+  --color-new-bg: hsl(0, 0%, 15%);
+  --color-elements:	hsl(0, 0%, 82%);
+  --color-indicator: 	hsl(237, 100%, 77%);
+  --color-secondary-foreground: hsl(0, 0%, 44%);
+  --color-new-secondary: hsl(0, 0%, 9%);
 }
 
 body {

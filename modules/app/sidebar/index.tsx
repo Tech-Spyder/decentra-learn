@@ -11,6 +11,14 @@ import { usePathname } from "next/navigation";
 
 export function Sidebar() {
   const pathname = usePathname();
+  const isRouteActive = React.useCallback(
+    (href: string) => {
+      if (href === "/") return pathname === "/"; // only exact root
+      // match the exact href OR any deeper segment under it
+      return pathname === href || pathname.startsWith(href + "/");
+    },
+    [pathname]
+  );
   return (
     <aside className="h-[calc(100vh-3rem)] sticky bg-secondary border border-border rounded-3xl flex flex-col">
       <div className="p-5">
@@ -31,7 +39,7 @@ export function Sidebar() {
               label={link.label}
               href={link.href}
               icon={link.icon}
-              isActive={pathname === link.href}
+              isActive={isRouteActive(link.href)}
             />
           );
         })}

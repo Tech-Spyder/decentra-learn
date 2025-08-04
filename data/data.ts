@@ -1,5 +1,6 @@
 export const courseContent = [
   {
+    id:'111112333',
     category: "Web 3",
     title: "The Advantages of Holding Bitcoin in Web 3",
     description: "Learn why Bitcoin is central to Web 3 and its future.",
@@ -8,6 +9,7 @@ export const courseContent = [
     progress: 0.6,
   },
   {
+    id:'2344567',
     category: "Web 3",
     title: "Decentralized Finance Basics",
     description: "A beginner-friendly guide to DeFi and its protocols.",
@@ -16,6 +18,7 @@ export const courseContent = [
     progress: 0.25,
   },
   {
+    id:'tokenized',
     category: "Tokens",
     title: "Understanding Utility Tokens",
     description: "What are utility tokens and how do they work?",
@@ -24,6 +27,7 @@ export const courseContent = [
     progress: 0.4,
   },
   {
+    id:'2334556',
     category: "Wallets",
     title: "Mastering Crypto Wallet Security",
     description: "Keep your crypto assets safe with best wallet practices.",
@@ -32,6 +36,7 @@ export const courseContent = [
     progress: 0.8,
   },
   {
+    id:'ffjjkkl',
     category: "Lending",
     title: "Crypto Lending 101",
     description: "How crypto lending platforms work and how to get started.",
@@ -40,6 +45,7 @@ export const courseContent = [
     progress: 0.3,
   },
   {
+    id:'sweertg',
     category: "Borrowing",
     title: "Borrowing Against Your Crypto",
     description: "Learn how to borrow without selling your assets.",
@@ -48,11 +54,51 @@ export const courseContent = [
     progress: 0.5,
   },
   {
+    id:'retuyjk',
     category: "Stake",
     title: "Staking for Passive Income",
     description: "Earn rewards by staking your crypto tokens.",
     src: "/courses/1.png",
     stats: 9800,
     progress: 0.75,
+  },
+];
+
+export const bannerSlides = [
+  {
+    id: 1,
+    title: "The Value of Bitcoin",
+    img: "/banners/1.jpg",
+    learners: "10k+",
+    avatars: [
+      { src: "/avatar1.png", alt: "User 1" },
+      { src: "/avatar2.png", alt: "User 2" },
+    ],
+    ctaLabel: "Get Started",
+    onCtaClick: () => console.log("Slide 1 CTA clicked"),
+  },
+  {
+    id: 2,
+    title: "DeFi Yield Strategies",
+    img: "/banners/1.jpg",
+    learners: "5k+",
+    avatars: [
+      { src: "/avatar1.png", alt: "User 1" },
+      { src: "/avatar2.png", alt: "User 2" },
+    ],
+    ctaLabel: "Explore",
+    onCtaClick: () => console.log("Slide 2 CTA"),
+  },
+  {
+    id: 3,
+    title: "Understanding NFTs & Ownership",
+    img: "/banners/1.jpg",
+    learners: "20k+",
+    avatars: [
+      { src: "/avatar1.png", alt: "User 1" },
+      { src: "/avatar2.png", alt: "User 2" },
+    ],
+    ctaLabel: "Start Learning",
+    onCtaClick: () => console.log("Slide 3 CTA"),
   },
 ];
