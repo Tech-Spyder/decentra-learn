@@ -1,27 +1,27 @@
-import * as React from 'react'
-import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area'
-import { cn } from '@/utils'
+import * as React from 'react';
+import * as ScrollAreaPrimitive from '@radix-ui/react-scroll-area';
+import { cn } from '@/utils';
 
 
 /* ----------------------------------------------------------------------------
  * ScrollAreaRoot
  * --------------------------------------------------------------------------*/
 
-type ScrollAreaElement = React.ComponentRef<typeof ScrollAreaPrimitive.Root>
-type ScrollAreaPrimitiveProps = React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>
+type ScrollAreaElement = React.ComponentRef<typeof ScrollAreaPrimitive.Root>;
+type ScrollAreaPrimitiveProps = React.ComponentPropsWithoutRef<typeof ScrollAreaPrimitive.Root>;
 
 export interface ScrollAreaProps extends ScrollAreaPrimitiveProps {
-  rootClassName?: string
+  rootClassName?: string;
 }
 
 /* ----------------------------------------------------------------------------
  * ScrollAreaRoot
  * --------------------------------------------------------------------------*/
 
-const SCROLLAREA_NAME = 'ScrollAreaRoot'
+const SCROLLAREA_NAME = 'ScrollAreaRoot';
 
 const Root = React.forwardRef<ScrollAreaElement, ScrollAreaProps>((props, ref) => {
-  const { className, rootClassName, children, type, ...rootProps } = props
+  const { className, rootClassName, children, type, ...rootProps } = props;
 
   return (
     <ScrollAreaPrimitive.Root
@@ -39,33 +39,34 @@ const Root = React.forwardRef<ScrollAreaElement, ScrollAreaProps>((props, ref) =
       <Bar orientation="horizontal" />
       <ScrollAreaPrimitive.Corner />
     </ScrollAreaPrimitive.Root>
-  )
-})
+  );
+});
 
-Root.displayName = SCROLLAREA_NAME
+Root.displayName = SCROLLAREA_NAME;
 
 /* ----------------------------------------------------------------------------
  * ScrollAreaScrollbar
  * --------------------------------------------------------------------------*/
 
-type ScrollBarElement = React.ComponentRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>
+type ScrollBarElement = React.ComponentRef<typeof ScrollAreaPrimitive.ScrollAreaScrollbar>;
 type ScrollBarPrimitiveProps = React.ComponentPropsWithoutRef<
   typeof ScrollAreaPrimitive.ScrollAreaScrollbar
->
-export type ScrollBarProps = ScrollBarPrimitiveProps
-
+>;
+export interface ScrollBarProps extends ScrollBarPrimitiveProps {
+  className?: string;
+}
 
 /* ----------------------------------------------------------------------------
  * ScrollAreaScrollbar
  * --------------------------------------------------------------------------*/
 
-const SCROLLBAR_NAME = 'Scrollbar'
+const SCROLLBAR_NAME = 'Scrollbar';
 
 const Bar = React.forwardRef<ScrollBarElement, ScrollBarProps>((props, ref) => {
-  const { className, orientation = 'vertical', ...scrollBarProps } = props
+  const { className, orientation = 'vertical', ...scrollBarProps } = props;
 
   return (
-    <ScrollAreaPrimitive.Scrollbar
+    <ScrollAreaPrimitive.ScrollAreaScrollbar
       ref={ref}
       orientation={orientation}
       className={cn(
@@ -77,17 +78,10 @@ const Bar = React.forwardRef<ScrollBarElement, ScrollBarProps>((props, ref) => {
       {...scrollBarProps}
     >
       <ScrollAreaPrimitive.ScrollAreaThumb className="relative flex-1 rounded-full bg-new-elements-border" />
-    </ScrollAreaPrimitive.Scrollbar>
-  )
-})
+    </ScrollAreaPrimitive.ScrollAreaScrollbar>
+  );
+});
 
-Bar.displayName = SCROLLBAR_NAME
+Bar.displayName = SCROLLBAR_NAME;
 
-/* ----------------------------------------------------------------------------
- * Exports
- * --------------------------------------------------------------------------*/
-
-export const ScrollArea = {
-  Root,
-  Bar,
-}
+export const ScrollArea = Object.assign({}, { Root, Bar });

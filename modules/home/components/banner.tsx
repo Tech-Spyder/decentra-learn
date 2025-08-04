@@ -3,7 +3,6 @@
 // import Slider from "react-slick";
 // import { ChevronRight } from "lucide-react";
 
-
 // const bannerImages = [
 //   '/banners/1.jpg', '/banners/2.jpg', '/banners/3.jpg'
 // ];
@@ -90,6 +89,8 @@ import Slider, { Settings } from "react-slick";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import cn from "classnames";
+import { Button } from "@/modules/app";
+import { useRouter } from "next/navigation";
 
 type BannerSlide = {
   id: React.Key;
@@ -125,13 +126,13 @@ export function BannerSlider({ slides, className }: BannerSliderProps) {
       <button className="block w-2 h-2 rounded-full bg-zinc-400/70 hover:bg-indigo-400" />
     ),
   };
-
+  const router = useRouter();
   return (
     <div className={cn("relative w-full overflow-x-clip", className)}>
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         {slides.map((s) => (
           <div key={s.id} className="!px-0">
-            <div className="relative w-[200px] h-64 md:h-80 xl:h-[350px] overflow-hidden rounded-2xl bg-[#1a1a1c]">
+            <div className="relative h-64 md:h-80 xl:h-[350px] overflow-hidden rounded-2xl bg-[#1a1a1c]">
               <Image
                 src={s.img}
                 alt={s.title}
@@ -178,7 +179,24 @@ export function BannerSlider({ slides, className }: BannerSliderProps) {
             </div>
           </div>
         ))}
-      </Slider>
+      </Slider> */}
+      <Image
+        src={"/banners/2.jpg"}
+        alt={"banner"}
+        width={2000}
+        height={400}
+        priority
+        className="object-cover max-h-[400px] rounded-3xl"
+      />
+      <div className="absolute top-1/2 left-6 z-30 transform -translate-y-[50%] flex flex-col gap-8">
+        <h1 className="text-4xl font-semibold text-white">
+          Welcome to The <br /> Decentralized Learning Platform.
+        </h1>
+
+        <Button onClick={() => router.push('/learning')} className="w-fit px-4 py-1 cursor-pointer">Explore</Button>
+      </div>
+
+      <div className="bg-black/60 absolute inset-0 rounded-3xl z-10"></div>
     </div>
   );
 }
