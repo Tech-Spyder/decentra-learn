@@ -1348,7 +1348,8 @@ export const StepsSlider = ({
       await tx.wait();
 
       alert("Rewards claimed successfully!");
-    } catch (error: Error) { // Changed from any to Error
+      //@ts-expect-error unknown
+    } catch (error: Unknown) { // Changed from any to Error
       console.error("Claim failed:", error);
       alert("Failed to claim rewards: " + error.message);
     }
