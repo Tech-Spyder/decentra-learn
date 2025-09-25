@@ -7,7 +7,6 @@ import type { User as PrivyUser } from "@privy-io/react-auth";
 
 const supabase = createClientComponentClient();
 
-// Extend the user type to include getIdToken
 type PrivyJwtUser = PrivyUser & {
   getIdToken?: () => Promise<string>;
 };
@@ -24,7 +23,7 @@ export function PrivySupabaseSync() {
       if (idToken) {
         await supabase.auth.setSession({
           access_token: idToken,
-          refresh_token: idToken, // used just to persist the session
+          refresh_token: idToken, 
         });
       } else {
         await supabase.auth.signOut();

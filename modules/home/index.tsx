@@ -147,11 +147,18 @@ export function HomePage() {
                 ? [categories[1], categories[0], ...categories.slice(2)]
                 : categories;
 
+            console.log(`reorderedCategories`, groupedCourses);
+
             return reorderedCategories.map((category) => (
               <div key={category} className="flex flex-col gap-8">
                 <div className="flex justify-between items-center">
-                  <Title title={groupedCourses[category][0]?.category || category} />
-                  <Link href={`/category/${category}`} className="text-accent hover:underline">
+                  <Title
+                    title={groupedCourses[category][0]?.category || category}
+                  />
+                  <Link
+                    href={`/category/${category}`}
+                    className="text-accent hover:underline"
+                  >
                     See All
                   </Link>
                 </div>
@@ -171,13 +178,14 @@ export function HomePage() {
                         description={course.description}
                         src={""}
                         stats={course.course_participants?.[0]?.count || 0}
-                        progress={
-                          course.steps?.length &&
-                          course.course_progress?.completed_steps?.length
-                            ? course.course_progress.completed_steps.length /
-                              course.steps.length
-                            : null
-                        }
+                        // progress={
+                        //   course.steps?.length &&
+                        //   course.course_progress?.completed_steps?.length
+                        //     ? course.course_progress.completed_steps.length /
+                        //       course.steps.length
+                        //     : null
+                        // }
+                        progress={calculateCourseProgress(course, course.course_progress)}
                       />
                     )
                   )}
@@ -189,4 +197,9 @@ export function HomePage() {
       )}
     </div>
   );
+}
+
+export function calculateCourseProgress(course: Course, progress: Progress | null): number | null {
+  if (!course.steps.length) return null;
+  return (progress?.completed_steps.length ?? 0) / course.steps.length;
 }

@@ -59,8 +59,8 @@ export default function RootLayout({
               </div>
 
               {/* Scrollable Content */}
-              <div className="flex-1 flex overflow-hidden">
-                <ScrollArea.Root className="flex-1 pb-16">
+              <div className="flex-1 flex gap-6 overflow-hidden">
+                <ScrollArea.Root>
                   {children}
                 </ScrollArea.Root>
                 <div className="flex-shrink-0">

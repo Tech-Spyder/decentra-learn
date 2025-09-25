@@ -29,7 +29,6 @@ export default function Page() {
       <h1 className="text-3xl font-bold mb-4">{data.title}</h1>
       <p className="text-muted-foreground mb-8">{data.description}</p>
 
-      {/* <CourseStepCarousel steps={data.steps} /> */}
       <StepsSlider
         steps={data.steps}
         onStepComplete={handleStepComplete}
