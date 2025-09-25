@@ -1,7 +1,8 @@
 import { Skeleton } from "@/modules/app/skeleton";
+import { usePrivy } from "@privy-io/react-auth";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { use } from "react";
 
 type CourseCardProps = {
   slug: string;
@@ -24,7 +25,7 @@ export default function CourseCard({
   stats,
   progress = null,
   segments = 4,
-  isSignedIn = false,
+  // isSignedIn = false,
 }: CourseCardProps) {
   const clamped = progress !== null ? Math.max(0, Math.min(progress, 1)) : 0;
   const segSize = 1 / segments;
@@ -34,6 +35,10 @@ export default function CourseCard({
     const segProgress = (clamped - start) / segSize;
     return Math.max(0, Math.min(segProgress, 1));
   });
+
+  const { authenticated } = usePrivy();
+  const isSignedIn = authenticated;
+
 
   return (
     <Link
@@ -67,6 +72,19 @@ export default function CourseCard({
         aria-label="course progress"
       >
         {fills.map((f, i) => (
+          // <div
+          //   key={i}
+          //   className="flex-1 h-1.5 rounded-full bg-muted-foreground overflow-hidden"
+          // >
+          //   <div
+          //     className={`h-full transition-[width] duration-300 ${
+          //       isSignedIn && progress !== null ? "bg-accent" : "bg-muted"
+          //     }`}
+          //     style={{
+          //       width: `${isSignedIn && progress !== null ? f * 100 : 100}%`,
+          //     }}
+          //   />
+          // </div>
           <div
             key={i}
             className="flex-1 h-1.5 rounded-full bg-muted-foreground overflow-hidden"
@@ -76,7 +94,7 @@ export default function CourseCard({
                 isSignedIn && progress !== null ? "bg-accent" : "bg-muted"
               }`}
               style={{
-                width: `${isSignedIn && progress !== null ? f * 100 : 100}%`,
+                width: `${isSignedIn && progress !== null ? f * 100 : 0}%`,
               }}
             />
           </div>
@@ -98,7 +116,7 @@ export function CourseCardSkeleton() {
       <div className="p-4 relative">
         <Skeleton className="h-6 w-full" />
       </div>
-      
+
       <div
         className="mt-auto flex items-center gap-1 sticky bottom-4 px-4"
         aria-label="course progress"

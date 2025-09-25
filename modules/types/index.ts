@@ -6,7 +6,7 @@ export const PLAYLISTS = {
 
 export type Slider = {
   id: string;
-type: "text" | "image";
+  type: "text" | "image";
   content: string;
   order_index: number;
 };
@@ -28,14 +28,14 @@ export type Course = {
   steps: Step[];
   created_at: string;
   category: string;
-  category_slug: string; // Optional for category slug
+  category_slug: string;
 };
 
 export type Progress = {
   id: string;
   user_id: string;
   course_id: string;
-  completed_steps: number[]; // adjust to match your schema
+  completed_steps: number[];
   earned_xp: number;
 };
 
