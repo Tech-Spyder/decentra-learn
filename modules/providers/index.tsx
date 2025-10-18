@@ -11,11 +11,14 @@ import * as Tooltip from "@radix-ui/react-tooltip";
 import { WagmiProvider } from "wagmi";
 import { wagmiConfig } from "@/lib/wagmi";
 import { privyConfig } from "@/lib/privy";
+import dynamic from "next/dynamic";
 
 type QueryProviderProps = {
   children: ReactNode;
 };
-
+const Toast = dynamic(() => import("@/modules/toast/toast"), {
+  ssr: false,
+});
 export function Provider({ children }: QueryProviderProps) {
   const toast = useToast();
 
@@ -65,7 +68,9 @@ export function Provider({ children }: QueryProviderProps) {
     <PrivyProvider {...privyConfig}>
       <QueryClientProvider client={queryClient}>
         <WagmiProvider config={wagmiConfig}>
-          <Tooltip.Provider>{children}</Tooltip.Provider>
+          <Tooltip.Provider>{children}
+            <Toast/>
+          </Tooltip.Provider>
         </WagmiProvider>
       </QueryClientProvider>
     </PrivyProvider>

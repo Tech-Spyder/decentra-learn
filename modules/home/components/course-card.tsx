@@ -10,11 +10,8 @@ type CourseCardProps = {
   description?: string;
   src: string;
   stats: number;
-  /** overall completion as a decimal 0–1 */
   progress?: number | null;
-  /** number of segments to show (defaults to 4) */
   segments?: number;
-  /** if user is signed in */
   isSignedIn?: boolean;
 };
 
@@ -25,7 +22,6 @@ export default function CourseCard({
   stats,
   progress = null,
   segments = 4,
-  // isSignedIn = false,
 }: CourseCardProps) {
   const clamped = progress !== null ? Math.max(0, Math.min(progress, 1)) : 0;
   const segSize = 1 / segments;
@@ -72,19 +68,6 @@ export default function CourseCard({
         aria-label="course progress"
       >
         {fills.map((f, i) => (
-          // <div
-          //   key={i}
-          //   className="flex-1 h-1.5 rounded-full bg-muted-foreground overflow-hidden"
-          // >
-          //   <div
-          //     className={`h-full transition-[width] duration-300 ${
-          //       isSignedIn && progress !== null ? "bg-accent" : "bg-muted"
-          //     }`}
-          //     style={{
-          //       width: `${isSignedIn && progress !== null ? f * 100 : 100}%`,
-          //     }}
-          //   />
-          // </div>
           <div
             key={i}
             className="flex-1 h-1.5 rounded-full bg-muted-foreground overflow-hidden"

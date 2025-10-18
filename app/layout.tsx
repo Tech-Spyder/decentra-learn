@@ -42,35 +42,33 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${neue.variable} antialiased`}>
         <Provider>
           <div className="flex w-full h-screen relative px-6 gap-6">
-            {/* Fixed Sidebar */}
-            <div className="mt-6 min-w-[15vw] flex-shrink-0">
+            <div className="mt-6 min-w-[15vw] max-[1250px]:min-w-[20vw] flex-shrink-0">
               <Sidebar />
             </div>
 
-            {/* Content Area with Fixed StatusBar and Scrollable Children */}
             <div className="flex-1 flex flex-col h-screen">
-              {/* Fixed StatusBar */}
               <div className="flex-shrink-0">
                 <StatusBar />
               </div>
 
-              {/* Scrollable Content */}
               <div className="flex-1 flex gap-6 overflow-hidden">
                 <ScrollArea.Root>
                   {children}
                 </ScrollArea.Root>
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 min-[1250px]:block hidden">
                   <LatestActivity />
                 </div>
               </div>
             </div>
           </div>
+         
           <AuthHandler />
         </Provider>
+        
       </body>
     </html>
   );
