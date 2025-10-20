@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎓 DecentraLearn
 
-## Getting Started
+[![License: MIT](https://img.shields.io/github/license/Tech-Spyder/decentra-learn?color=blue)](LICENSE)
+![Last Commit](https://img.shields.io/github/last-commit/Tech-Spyder/decentra-learn?color=brightgreen)
+![Stars](https://img.shields.io/github/stars/Tech-Spyder/decentra-learn?style=social)
+![Forks](https://img.shields.io/github/forks/Tech-Spyder/decentra-learn?style=social)
+![Issues](https://img.shields.io/github/issues/Tech-Spyder/decentra-learn?color=yellow)
 
-First, run the development server:
+
+> A decentralized learning platform where learners earn XP by completing on-chain and off-chain activities — built with **Next.js**, **Supabase**, **Privy Auth**, and **CrossFi integration**.
+
+---
+
+## 🧠 Project Overview
+
+**DecentraLearn** is an open learning platform designed to gamify education through blockchain technology.  
+Learners progress through structured **multi-step courses**, earn **XP** for completing lessons, and can **convert XP to MPX tokens** which can be **staked to earn XFI** (CrossFi’s native token).  
+
+It combines the power of **Web3 identity**, **decentralized progress tracking**, and **gamified learning** in one intuitive interface.
+
+### Core Features
+- 🧭 **Multi-Level Courses** — Beginner → Intermediate → Advanced  
+- 🪙 **XP → MPX → XFI Flow** — Complete → Convert → Stake → Earn  
+- 🧩 **Privy Authentication** — Simple email login + auto wallet creation  
+- ⚙️ **Supabase Integration** — Store course content and progress  
+- 💻 **CrossFi Blockchain** — Real staking simulation for rewards  
+- 📊 **Progress Tracking** — Visual XP bars and leaderboard metrics  
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18+ recommended)
+- npm / yarn / pnpm
+- Supabase project credentials
+- Privy app credentials
+- CrossFi wallet setup
+
+---
+
+### Installation
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Techh-Spyder/decentralearn.git
+cd decentralearn
+npm install
+```
+---
+
+### Configuration
+
+```bash
+Create a .env.local file in the root directory and include:
+
+NEXT_PUBLIC_SUPABASE_URL=<your_supabase_url>
+NEXT_PUBLIC_SUPABASE_ANON_KEY=<your_supabase_anon_key>
+NEXT_PUBLIC_PRIVY_APP_ID=<your_privy_app_id>
+NEXT_PUBLIC_CROSSFI_API=<your_crossfi_api_url>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Make sure to replace placeholders with your actual keys.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
+Development
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then visit http://localhost:3000
+ in your browser.
+The app supports hot reloading, so edits reflect instantly.
+---
+Build & Deployment
 
-## Learn More
+For production:
+```bash
+npm run build
+npm run start
+```
 
-To learn more about Next.js, take a look at the following resources:
+You can deploy seamlessly to:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Vercel (recommended)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Netlify
 
-## Deploy on Vercel
+Any Node-compatible host
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+When deploying to Vercel:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Connect your GitHub repo
+
+Add environment variables in project settings
+
+Click “Deploy” 🚀
+---
+### 🧰 Tech Stack
+- **Frontend:** Next.js 14 (App Router)
+- **Auth:** Privy (Email + Wallet)
+- **Database:** Supabase
+- **Blockchain:** CrossFi Network (MPX + XFI integration)
+- **UI:** Shadcn/UI, TailwindCSS
+- **State & Data:** TanStack Query, Zustand
+
+---
+### 🧪 Future Enhancements
+
+🧭 Course creation dashboard for instructors
+
+🎮 Achievement badges & NFT rewards
+
+💬 Community discussions per course
+
+📱 Mobile-friendly adaptive layout
+
+🧱 Cross-chain XP tracking
+
+### 🪪 License
+
+This project is licensed under the MIT License
+.
+
+### 💡 Author
+
+Techh Spyder
+GitHub
+ • X (Twitter)
