@@ -5,25 +5,26 @@ import { formatDistanceToNowStrict } from "date-fns";
 import { ScrollArea } from "@/modules/app/scroll-area";
 import { Title } from "@/modules/app";
 
-
 function formatShortRelativeTime(date: Date): string {
   const raw = formatDistanceToNowStrict(date, { addSuffix: false });
   // Map long units to short ones
-  return raw
-    .replace(" seconds", "s")
-    .replace(" second", "s")
-    .replace(" minutes", " min")
-    .replace(" minute", " min")
-    .replace(" hours", "h")
-    .replace(" hour", "h")
-    .replace(" days", "d")
-    .replace(" day", "d")
-    .replace(" weeks", "w")
-    .replace(" week", "w")
-    .replace(" months", "mo")
-    .replace(" month", "mo")
-    .replace(" years", "y")
-    .replace(" year", "y") + " ago";
+  return (
+    raw
+      .replace(" seconds", "s")
+      .replace(" second", "s")
+      .replace(" minutes", " min")
+      .replace(" minute", " min")
+      .replace(" hours", "h")
+      .replace(" hour", "h")
+      .replace(" days", "d")
+      .replace(" day", "d")
+      .replace(" weeks", "w")
+      .replace(" week", "w")
+      .replace(" months", "mo")
+      .replace(" month", "mo")
+      .replace(" years", "y")
+      .replace(" year", "y") + " ago"
+  );
 }
 
 export function LatestActivity() {
@@ -44,6 +45,9 @@ export function LatestActivity() {
           />
         ))}
       </ScrollArea.Root>
+      <div className="absolute inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-20 rounded-3xl">
+        <p className="text-accent text-lg font-semibold">Coming Soon!</p>
+      </div>
     </div>
   );
 }
@@ -64,15 +68,10 @@ function ActivityItem({
   return (
     <div className="py-2 border-b border-b-border flex w-full items-center justify-between">
       <div className="flex items-center gap-2">
-        <Avatar
-          className="w-8 h-8 min-w-8 rounded-full"
-          alt="User Avatar"
-        />
+        <Avatar className="w-8 h-8 min-w-8 rounded-full" alt="User Avatar" />
         <div className="flex flex-col">
           <p className="text-white text-sm font-medium">Claimed Rewards</p>
-          <p className="text">
-            {formatShortRelativeTime(date)}
-          </p>
+          <p className="text">{formatShortRelativeTime(date)}</p>
         </div>
       </div>
       <div className="bg-new-secondary p-2 rounded-full flex items-center gap-1 border border-border w-[105px] justify-center">

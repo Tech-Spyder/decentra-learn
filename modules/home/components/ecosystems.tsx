@@ -64,7 +64,7 @@ export function Ecosystems() {
                 backgroundColor: eco.bgColor,
                 borderColor: eco.borderColor,
               }}
-              className={`p-3 rounded-[32px] border w-[100px] group h-[100px] flex items-center justify-center transition-opacity duration-300 ${
+              className={`p-3 sm:rounded-[32px] rounded-xl border sm:w-[100px] group sm:h-[100px] w-[60px] h-[60px] flex items-center justify-center transition-opacity duration-300 ${
                 isEnabled ? "opacity-100" : "opacity-40"
               }`}
             >

@@ -116,7 +116,7 @@ export default function UserCoursesTable() {
         </div>
       </div>
 
-      <div className="bg-[#171717] rounded-3xl overflow-hidden border border-border">
+      {/* <div className="bg-[#171717] rounded-3xl overflow-hidden border border-border">
         <div className="overflow-x-auto">
           <table className="w-full">
             <thead className="bg-[#171717]">
@@ -266,7 +266,7 @@ export default function UserCoursesTable() {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }

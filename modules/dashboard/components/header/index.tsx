@@ -126,7 +126,7 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex w-full items-center gap-[26px]">
+      <div className="flex w-full items-center gap-[26px] max-md:flex-col">
         {dashboardStats.map((stat) => (
           <div
             key={stat.label}

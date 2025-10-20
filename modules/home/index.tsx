@@ -17,7 +17,7 @@ export function HomePage() {
   } = useCoursesGroupedByCategory();
 
   return (
-    <div className="w-full flex flex-col gap-28 pb-16 min-h-screen">
+    <div className="w-full flex flex-col sm:gap-28 gap-10 pb-16 min-h-screen">
       <div className="flex max-h-[400px] relative gap-7 items-stretch w-full">
         <div className="flex-1">
           <BannerSlider slides={bannerSlides} />

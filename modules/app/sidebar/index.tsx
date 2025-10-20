@@ -13,18 +13,17 @@ export function Sidebar() {
   const pathname = usePathname();
   const isRouteActive = React.useCallback(
     (href: string) => {
-      if (href === "/") return pathname === "/"; // only exact root
-      // match the exact href OR any deeper segment under it
+      if (href === "/") return pathname === "/";
       return pathname === href || pathname.startsWith(href + "/");
     },
     [pathname]
   );
   return (
     <aside className="h-[calc(100vh-3rem)] sticky bg-secondary border border-border rounded-3xl flex flex-col">
-      <div className="p-5">
+      <div className="py-5 border-b border-border mb-6">
         <Link
           href="/"
-          className="flex items-center gap-3 border-b border-border pb-6 mb-5"
+          className="flex items-center gap-3 px-6"
         >
           <Logo className="size-6" />
           <p className="font-medium text-white">DecentraLearn</p>
@@ -48,7 +47,7 @@ export function Sidebar() {
   );
 }
 
-const sidebarLinks = [
+export const sidebarLinks = [
   {
     label: "Discover",
     href: "/",
@@ -76,7 +75,7 @@ type SidebarLinkProps = {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   isActive?: boolean;
 };
-function SidebarLinkItem({
+export function SidebarLinkItem({
   label,
   href,
   icon: Icon,

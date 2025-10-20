@@ -4,3 +4,5 @@ export {Tabs, TabsContent, TabsList, TabsTrigger} from './tabs';
 export {Card} from './card'
 export {Button} from './button'
 export {Title} from './title'
+export {LatestActivityMobile} from './latest-activity'
+export {MobileNav} from './sidebar/mobile'

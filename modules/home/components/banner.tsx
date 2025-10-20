@@ -189,7 +189,7 @@ export function BannerSlider({ slides, className }: BannerSliderProps) {
         className="object-cover max-h-[400px] rounded-3xl"
       />
       <div className="absolute top-1/2 left-6 z-30 transform -translate-y-[50%] flex flex-col gap-8">
-        <h1 className="text-4xl font-semibold text-white">
+        <h1 className="text-4xl max-sm:text-xl font-semibold text-white">
           Welcome to The <br /> Decentralized Learning Platform.
         </h1>
 
