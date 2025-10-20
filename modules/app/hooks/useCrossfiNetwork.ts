@@ -2,7 +2,7 @@
 import { useEffect } from 'react'
 import { useChainId, useSwitchChain } from 'wagmi'
 import { usePrivy } from '@privy-io/react-auth'
-import { crossfi } from '@/lib/chains'
+import {  crossfiMainnet } from '@/lib/chains'
 
 
 export function useCrossFiNetwork() {
@@ -10,11 +10,11 @@ export function useCrossFiNetwork() {
   const { switchChain } = useSwitchChain()
   const { authenticated } = usePrivy()
   
-  const isOnCrossFi = chainId === crossfi.id
+  const isOnCrossFi = chainId === crossfiMainnet.id
   
   const switchToCrossFi = async () => {
     try {
-      await switchChain({ chainId: crossfi.id })
+      await switchChain({ chainId: crossfiMainnet.id })
     } catch (error) {
       console.error('Failed to switch to CrossFi:', error)
     }

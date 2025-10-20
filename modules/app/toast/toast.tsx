@@ -14,7 +14,7 @@ type CustomToastProps = {
 
 export const CustomToast = ({ title, description, actions, status, close }: CustomToastProps) => {
   return (
-    <div className="relative bg-background shadow-elements rounded-xl flex p-4 border border-dialog-border max-w-[356px]">
+    <div className="relative bg-background shadow-elements rounded-xl flex p-4 border border-border max-w-[356px]">
       <div className="flex flex-col gap-0.5 items-start justify-center">
         <h1
           className={cn('sub-heading select-none font-medium font-sans', {

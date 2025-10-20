@@ -15,7 +15,7 @@ export default function Page() {
   } = useCoursesGroupedByCategory();
 
   return (
-    <div className="flex flex-col gap-8 px-6">
+    <div className="flex flex-col gap-8">
       <Title title="All Courses" className="underline"/>
       {isLoadingGrouped ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full">

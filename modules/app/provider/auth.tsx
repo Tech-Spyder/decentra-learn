@@ -38,7 +38,6 @@ export function AuthHandler() {
       }
 
       const { user: savedUser } = await res.json();
-      console.log("User saved successfully:", savedUser);
     } catch (err) {
       console.error("Error saving user:", err);
       setError(err instanceof Error ? err.message : "Failed to save user");

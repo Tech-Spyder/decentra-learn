@@ -17,12 +17,12 @@ export default function Page() {
   if (!data?.steps || data.steps.length === 0)
     return <div className="p-6">No steps found for this course.</div>;
   const handleStepComplete = (stepId: string) => {
-    console.log("Step completed:", stepId);
+    // console.log("Step completed:", stepId);
   };
 
   const handleAllStepsComplete = () => {
-    console.log("All steps completed!");
-    alert("Congratulations! All steps completed!");
+    // console.log("All steps completed!");
+    // alert("Congratulations! All steps completed!");
   };
   return (
     <div className="max-w-5xl w-full mx-auto">

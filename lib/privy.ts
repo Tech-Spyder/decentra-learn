@@ -1,6 +1,6 @@
 // config/privy.ts
 import type { PrivyClientConfig } from '@privy-io/react-auth'
-import { crossfi } from './chains'
+import {  crossfiMainnet } from './chains'
 
 export const privyConfig: {
   appId: string
@@ -13,8 +13,8 @@ export const privyConfig: {
       theme: 'dark' as const, // or 'dark' as const
       accentColor: '#676FFF',
     },
-    defaultChain: crossfi,
-    supportedChains: [crossfi],
+    defaultChain: crossfiMainnet,
+    supportedChains: [crossfiMainnet],
     embeddedWallets: {
       createOnLogin: 'users-without-wallets',
       requireUserPasswordOnCreate: false,
